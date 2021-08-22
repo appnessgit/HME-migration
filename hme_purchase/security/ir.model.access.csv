@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_partner,user_res_partner,base.model_res_partner,,1,1,1,1
+access_product_template,user_product_template,product.model_product_template,,1,1,1,1
+access_product_product,user_product_product,product.model_product_product,,1,1,1,1
+access_purchase_order_line,user_purchase_order_line,purchase.model_purchase_order,,1,1,1,1

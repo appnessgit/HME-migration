@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        brand field to products view
+        <record id="hme_product_template_form_view" model="ir.ui.view">
+            <field name="name">Product Template</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="before">
+                    <field name="service_to_purchase"/>
+                </xpath>
+                <xpath expr="//field[@name='type']" position="before">
+                    <field name="brand_id" domain="[('is_brand','=',True)]"/>
+                </xpath>
+            </field>
+        </record>
+        <!--brand field to product variants view-->
+        <record id="hme_product_product_form_view" model="ir.ui.view">
+            <field name="name">Product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="before">
+                    <field name="brand_id" domain="[('is_brand','=',True)]"
+                           options="{'no_create':True,'no_edit':True}"/>
+                </xpath>
+            </field>
+        </record>
+        <!--        group by brand-->
+        <record id="hme_product_template_search_view" model="ir.ui.view">
+            <field name="name">Product Template Search</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='filter_to_sell']" position="after">
+                    <field name="brand_id"/>
+                    <filter string="Brand" name="filter_to_brand" context="{'group_by':'brand_id'}"/>
+                </xpath>
+            </field>
+        </record>
+        <!--        term of delivery field-->
+        <record id="hme_purchase_order_aform" model="ir.ui.view">
+            <field name="name">hme view order form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_order']" position="after">
+
+                    <field name="terms_of_delivery" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
