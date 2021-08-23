@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "HME PURCHASE",
+    'name': "HME Purchase",
 
     'summary': """
         Purchase Customization

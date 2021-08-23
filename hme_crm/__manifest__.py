@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "HME CRM",
+    'name': "HME Crm",
 
     'summary': """
        Crm Customization
