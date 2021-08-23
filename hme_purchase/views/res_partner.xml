@@ -10,9 +10,15 @@
                     <field name="is_brand"/>
                 </xpath>
                 <xpath expr="//div[@name='button_box']" position="inside">
+<<<<<<< HEAD
                     <button icon="fa-list" class="oe_stat_button">
                         <field name="product_count" string="Products" widget="statinfo" domain="[('is_brand','=',True)]"/>
                     </button>
+=======
+               	  <button icon="fa-list" class="oe_stat_button" type="object" name="action_view_product" >
+			       <field name="product_count" string="Products" widget="statinfo" />
+               </button>
+>>>>>>> 1369b20238ae08c342b9f9f0c15434bd14d4fbb5
                 </xpath>
             </field>
         </record>
