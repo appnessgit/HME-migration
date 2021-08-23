@@ -16,5 +16,5 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
 
-    purchase_order_count = fields.Integer()
-    warehouse_id=fields.Many2one('stock.warehouse')
+    # purchase_order_count = fields.Integer()
+    warehouse_id=fields.Boolean()
