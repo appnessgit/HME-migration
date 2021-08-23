@@ -6,9 +6,9 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                 <xpath expr="//field[@name='date_order'][2]" position="after">
-                        <field name="warehouse_id" />
-                </xpath>
+<!--                 <xpath expr="//field[@name='date_order'][2]" position="after">-->
+<!--                        <field name="warehouse_id" />-->
+<!--                </xpath>-->
 <!--                <xpath expr="//div[@name='button_box']" position="inside">-->
 <!--                    <span class="o_stat_value">-->
 <!--                        <field name="purchase_order_count"/>-->

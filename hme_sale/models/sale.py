@@ -17,4 +17,4 @@ class SaleOrder(models.Model):
 
 
     # purchase_order_count = fields.Integer()
-    warehouse_id=fields.Boolean()
+    # warehouse_id=fields.Boolean()
