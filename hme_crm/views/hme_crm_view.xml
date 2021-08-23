@@ -1,0 +1,15 @@
+<odoo>
+    <record id="hme_crm_view" model="ir.ui.view">
+        <field name="name">hme crm view</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_form_popup"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='user_id']" position="replace" >
+              <field name="user_ids" widget="many2many_tags" />
+                
+                
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -20,14 +20,18 @@
     'version': '',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['crm'],
 
     # always loaded
     'data': [
+        # 'security/hme_crmsecurity.xml',
+        'security/ir.model.access.csv',
+        'views/hme_crm_view.xml',
         # 'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
+
     ],
 }
