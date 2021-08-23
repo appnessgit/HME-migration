@@ -3,7 +3,7 @@
     'name': "HME Inventory",
 
     'summary': """
-       Crm Customization
+       Inventory Customization
         """,
 
     'description': """

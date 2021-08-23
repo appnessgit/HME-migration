@@ -17,3 +17,4 @@ class SaleOrder(models.Model):
 
 
     purchase_order_count = fields.Integer()
+    warehouse_id=fields.Many2one('stock.warehouse')
