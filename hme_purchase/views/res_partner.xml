@@ -12,9 +12,15 @@
                     <field name="is_brand"/>
                 </xpath>
                 <xpath expr="//div[@name='button_box']" position="inside">
+<<<<<<< HEAD
                	  <button icon="fa-list" class="oe_stat_button">
 			       <field name="product_count" string="Products" widget="statinfo" domain="[('is_brand','=',True)]"/>
                </button>
+=======
+                    <button icon="fa-list" class="oe_stat_button" type="object" name="action_view_product">
+                        <field name="product_count" string="Products" widget="statinfo" />
+                    </button>
+>>>>>>> d6d356d3b3d906f2fca3268444e6d0689d1b12c6
                 </xpath>
             </field>
         </record>
@@ -27,8 +33,7 @@
             <field name="context">{'is_brand': 1, 'default_customer':0, 'default_supplier':0}</field>
             <field name="view_mode">kanban,form,tree</field>
         </record>
-        <menuitem name="Brands" id="product_brands_menu" parent="purchase.menu_procurement_management"
-                  action="menu_product_brand_action" sequence="10"/>
+        <menuitem name="Brands" id="product_brands_menu" parent="purchase.menu_procurement_management" action="menu_product_brand_action" sequence="10"/>
 
     </data>
 </odoo>

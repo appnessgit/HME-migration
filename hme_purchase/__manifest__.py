@@ -30,6 +30,7 @@
         # 'security/security.xml',
         'views/product.xml',
         'views/res_partner.xml',
+        'views/purchase_order_hme.xml'
 
     ],
     # only loaded in demonstration mode
