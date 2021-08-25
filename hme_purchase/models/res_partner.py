@@ -15,17 +15,13 @@ class ResPartner(models.Model):
 
     def action_view_product(self):
         for rec in self:
-            # raise UserError(self.id)
             return {
                 'name': _('product'),
-                # 'view_type': 'form',
                 'view_mode': 'tree,form',
-                # 'views': [(view_id, 'form')],
                 'res_model': 'product.template',
                 'view_id': False,
                 'type': 'ir.actions.act_window',
                 'domain':[('brand_id','=',self.id)],
-                # 'context': {'active_ids': self.ids, 'active_model': 'account.move.line'}
 
 
         }

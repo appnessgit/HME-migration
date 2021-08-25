@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "HME CRM",
+    'name': "HME Inventory",
 
     'summary': """
-       Crm Customization
+       Inventory Customization
         """,
 
     'description': """
@@ -20,11 +20,12 @@
     'version': '',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','stock'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
+        'views/brand_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
