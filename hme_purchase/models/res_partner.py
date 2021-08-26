@@ -8,6 +8,8 @@ class ResPartner(models.Model):
     is_brand = fields.Boolean(string="Is a Brand")
     product_ids = fields.One2many('product.template', 'brand_id')
     product_count = fields.Integer(compute="_compute_products")
+    vendor_type = fields.Selection(string='Vendor Type', selection=[('import', 'Forign'), ('local', 'Local')], required=True)
+
 
     def _compute_products(self):
         for rec in self:

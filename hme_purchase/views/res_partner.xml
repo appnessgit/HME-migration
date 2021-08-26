@@ -13,8 +13,17 @@
                 </xpath>
                 <xpath expr="//div[@name='button_box']" position="inside">
                     <button icon="fa-list" class="oe_stat_button" type="object" name="action_view_product">
-                        <field name="product_count" string="Products" widget="statinfo" />
+                        <field name="product_count" string="Products" widget="statinfo"/>
                     </button>
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
+                    <page  string="Supplier Type">
+                        <group>
+                            <group>
+                                <field name="vendor_type"/>
+                            </group>
+                        </group>
+                    </page>
                 </xpath>
             </field>
         </record>
@@ -27,7 +36,8 @@
             <field name="context">{'is_brand': 1, 'default_customer':0, 'default_supplier':0}</field>
             <field name="view_mode">kanban,form,tree</field>
         </record>
-        <menuitem name="Brands" id="product_brands_menu" parent="purchase.menu_procurement_management" action="menu_product_brand_action" sequence="10"/>
+        <menuitem name="Brands" id="product_brands_menu" parent="purchase.menu_procurement_management"
+                  action="menu_product_brand_action" sequence="10"/>
 
     </data>
 </odoo>

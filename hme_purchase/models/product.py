@@ -9,7 +9,3 @@ class ProductTemplate(models.Model):
     default_code = fields.Char('Code')
     service_to_purchase=fields.Boolean()
 
-class PurchaseOrder(models.Model):
-    _inherit = "purchase.order"
-
-    terms_of_delivery = fields.Many2one('delivery.term')

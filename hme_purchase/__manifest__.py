@@ -25,12 +25,13 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        # 'data/terms_of_delivery_data.xml',
+        'data/terms_of_delivery_data.xml',
         # 'security/groups_hme.xml',
         # 'security/security.xml',
         'views/product.xml',
         'views/res_partner.xml',
         'views/purchase_order_hme.xml'
+
 
     ],
     # only loaded in demonstration mode

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="delivery_term_cfp" model="delivery.term">
+            <field name="name">FCA / FOB</field>
+        </record>
+
+         <record id="delivery_term_cpt" model="delivery.term">
+            <field name="name">CPT / CFR</field>
+        </record>
+
+         <record id="delivery_term_cip" model="delivery.term">
+            <field name="name">CIP / CIF</field>
+        </record>
+
+    </data>
+</odoo>

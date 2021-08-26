@@ -6,21 +6,37 @@
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="before">
-                <field name="purchase_type" />
+                <field name="purchase_type"/>
+            </xpath>
+            <xpath expr="//field[@name='date_order']" position="after">
+                <field name="terms_of_delivery" attrs="{'invisible':[('purchase_type','!=','import')]}"/>
             </xpath>
 
-            <!-- <xpath expr="//field[@name='date_order']" position="after">
-                <field name="terms_of_delivery" />
-            </xpath> -->
-
-            <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_id']" position="before">
-                <field name="brand_id" />
+            <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_id']"
+                   position="before">
+                <field name="brand_id"/>
             </xpath>
-
-            <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_id']" position="replace">
-                <field name="product_id" />
+            <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_id']"
+                   position="replace">
+                <field name="product_id"/>
             </xpath>
+            <xpath expr="//field[@name='partner_ref']" position="after">
+            <field name="way_of_transport" attrs="{'invisible':[('purchase_type','!=','import')]}"/>
+            <field name="terms_note" attrs="{'invisible':[('purchase_type','!=','import')]}"/>
+        </xpath>
+               <xpath expr="//field[@name='date_order']" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </xpath>
+        </field>
+    </record>
 
+    <record id="hme_delivery_term_form" model="ir.ui.view">
+        <field name="name">Hme Delivery Term</field>
+        <field name="model">delivery.term</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="name"/>
+            </form>
         </field>
     </record>
 </odoo>
