@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 {
     'name': "HME Purchase",
@@ -29,7 +30,7 @@
         # 'security/security.xml',
         'views/product.xml',
         'views/res_partner.xml',
-        'views/purchase_order_hme.xml',
+        'views/purchase_order_hme.xml'
         'security/ir.model.access.csv',
 
 
