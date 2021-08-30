@@ -24,15 +24,16 @@
 
     # always loaded
     'data': [
-        'views/purchase_order_hme.xml'
+        'data/terms_of_delivery_data.xml',
         # 'security/groups_hme.xml',
         # 'security/security.xml',
         'views/product.xml',
         'views/res_partner.xml',
-        'data/terms_of_delivery_data.xml',
+        'views/purchase_order_hme.xml',
         'security/ir.model.access.csv',
 
     ],
+
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',

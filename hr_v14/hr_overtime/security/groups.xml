@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_overtime_management">
+            <field name="name">Overtime Management</field>
+        </record>
+        <record id="group_overtime_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="hr_overtime.module_overtime_management"/>
+        </record>
+         <record id="group_overtime_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="hr_overtime.module_overtime_management"/>
+            <field name="implied_ids" eval="[(4, ref('hr_overtime.group_overtime_user'))]"/>
+        </record>
+    </data>
+</odoo>

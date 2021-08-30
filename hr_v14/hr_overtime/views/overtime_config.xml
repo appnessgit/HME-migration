@@ -1,0 +1,75 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="res_config_settings_view_form">
+            <field name="name">res.config.settings.view.form.inherit.overtime</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Employees" string="Employees" data-key="hr" groups="hr.group_hr_manager">
+                   <h2>Employees Overtime</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                            <span class="o_form_label">Overtime Rates</span>
+                                <div class="content-group">
+                                    <div class="text-muted">
+                                        Default Overtime Rates Per Hour
+                                    </div>
+                                    <div class="row mt16">
+                                        <label string="Day Rate" for="hours_normal_rate" class="col-lg-3 o_light_label"/>
+                                        <field name="hours_normal_rate"/>
+                                    </div>
+                                    <div class="row">
+                                        <label string="Night Rate" for="hours_night_rate" class="col-lg-3 o_light_label"/>
+                                        <field name="hours_night_rate"/>
+                                    </div>
+                                    <div class="row mt16">
+                                        <label string="Weekend Rate" for="hours_weekend_rate" class="col-lg-3 o_light_label"/>
+                                        <field name="hours_weekend_rate"/>
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                        <label string="Holiday Rate" for="hours_holiday_rate" class="col-lg-3 o_light_label"/>
+                                        <field name="hours_holiday_rate"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box" id="rounding_method" title="A rounding per line is advised if your prices are tax-included. That way, the sum of line subtotals equals the total with taxes.">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                <span class="o_form_label">Overtime Salary</span>
+                                    <div class="content-group">
+                                        <div class="text-muted">
+                                            Overtime Computation Per Hour
+                                        </div>
+                                        <div class="row">
+                                            <label string="Day Rate Salary" for="normal_rate_salary" class="col-lg-3 o_light_label"/>
+                                            <field name="normal_rate_salary" widget="radio"/>
+                                        </div>
+                                        <div class="row">
+                                            <label string="Night Rate Salary" for="night_rate_salary" class="col-lg-3 o_light_label"/>
+                                            <field name="night_rate_salary" widget="radio"/>
+                                        </div>
+                                        <div class="row">
+                                            <label string="Weekend Rate Salary" for="weekend_rate_salary" class="col-lg-3 o_light_label"/>
+                                            <field name="weekend_rate_salary" widget="radio"/>
+                                        </div>
+                                        <div class="row">
+                                            <label string="Holiday Rate Salary" for="holiday_rate_salary" class="col-lg-3 o_light_label"/>
+                                            <field name="holiday_rate_salary" widget="radio"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
