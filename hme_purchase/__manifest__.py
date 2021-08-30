@@ -20,18 +20,17 @@
     'version': '14',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','account_accountant','account','contacts','product','sale_management','stock','purchase'],
+    'depends': ['base', 'account_accountant', 'account', 'contacts', 'product', 'sale_management', 'stock', 'purchase'],
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
-        'data/terms_of_delivery_data.xml',
+        'views/purchase_order_hme.xml'
         # 'security/groups_hme.xml',
         # 'security/security.xml',
         'views/product.xml',
         'views/res_partner.xml',
-        'views/purchase_order_hme.xml'
-
+        'data/terms_of_delivery_data.xml',
+        'security/ir.model.access.csv',
 
     ],
     # only loaded in demonstration mode
