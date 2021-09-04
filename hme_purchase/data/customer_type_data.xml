@@ -1,0 +1,15 @@
+<odoo>
+    <data noupdate="1">
+        <record id="customer_type_public" model="customer.type">
+            <field name="name">Public</field>
+        </record>
+         <record id="customer_type_private" model="customer.type">
+            <field name="name">Private</field>
+        </record>
+
+         <record id="customer_type_sub" model="customer.type">
+            <field name="name">Sub Distributor</field>
+        </record>
+
+    </data>
+</odoo>

@@ -9,10 +9,13 @@
 
                 <xpath expr="//field[@name='date_order'][2]" position="attributes">
                     <attribute name="widget">date</attribute>
+
                 </xpath>
+
                 <xpath expr="//sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_id']"
                        position="before">
                     <field name="brand_id"/>
+
                 </xpath>
 
                 <xpath expr="//sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_id']"
@@ -22,7 +25,6 @@
                 <xpath expr="//sheet/notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
                     <field name="batch_num" options="{'no_create': True, 'no_open': True}"/>
                     <field name="expiry_date"/>
-
                 </xpath>
             </field>
         </record>

@@ -8,8 +8,14 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <group >
+                        <field name="customer_type"/>
+                    </group>
+                </xpath>
                 <xpath expr="//field[@name='category_id']" position="after">
                     <field name="is_brand"/>
+                    <field name="is_vendor"/>
                 </xpath>
                 <xpath expr="//div[@name='button_box']" position="inside">
                     <button icon="fa-list" class="oe_stat_button" type="object" name="action_view_product">
@@ -17,7 +23,7 @@
                     </button>
                 </xpath>
                 <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
-                    <page  string="Supplier Type">
+                    <page string="Supplier Type" attrs="{'invisible':[('is_vendor','!=',True)]}">
                         <group>
                             <group>
                                 <field name="vendor_type"/>
@@ -25,6 +31,18 @@
                         </group>
                     </page>
                 </xpath>
+            </field>
+        </record>
+        <!--        customer types-->
+        <record id="customer_type_view_form" model="ir.ui.view">
+            <field name="name">Customer Type</field>
+            <field name="model">customer.type</field>
+            <field name="arch" type="xml">
+                <form>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                </form>
             </field>
         </record>
 
