@@ -10,7 +10,7 @@ class ResPartner(models.Model):
     product_ids = fields.One2many('product.template', 'brand_id')
     product_count = fields.Integer(compute="_compute_products")
     vendor_type = fields.Selection(string='Vendor Type', selection=[('import', 'Forign'), ('local', 'Local')],
-                                   required=True)
+                              )
     customer_type = fields.Many2one('customer.type', string="Customer Type")
 
     def _compute_products(self):
