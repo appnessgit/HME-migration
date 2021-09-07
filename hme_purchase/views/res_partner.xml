@@ -23,7 +23,7 @@
                     </button>
                 </xpath>
                 <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
-                    <page string="Supplier Type" attrs="{'invisible':[('is_vendor','!=',True)}">
+                    <page string="Supplier Type" attrs="{'invisible':[('is_vendor','!=',True)]}">
                         <group>
                             <group>
                                 <field name="vendor_type" attrs="{'required':[('is_vendor','=',True)]}"/>
