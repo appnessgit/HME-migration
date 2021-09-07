@@ -26,7 +26,7 @@
                     <page string="Supplier Type" attrs="{'invisible':[('is_vendor','!=',True),'required':[('is_vendor','=',True)]}">
                         <group>
                             <group>
-                                <field name="vendor_type"/>
+                                <field name="vendor_type" attrs="{'required':[('is_vendor','=',True)]}"/>
                             </group>
                         </group>
                     </page>
