@@ -8,7 +8,7 @@ class hr_payslip(models.Model):
     _inherit='hr.payslip'
 
     overtime = fields.Float("Overtime", readonly=True)
-    paid = fields.Bzzzzzzzzzzzzzzoolean("Overtime", readonly=True)
+    paid = fields.Boolean("Overtime", readonly=True)
 
     def compute_sheet(self):
         self.compute_overtime()
