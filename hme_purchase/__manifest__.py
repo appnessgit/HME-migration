@@ -31,7 +31,9 @@
         'views/product.xml',
         'views/res_partner.xml',
         'views/purchase_order.xml',
+        'security/security_groups.xml',
         'security/ir.model.access.csv',
+
 
     ],
 

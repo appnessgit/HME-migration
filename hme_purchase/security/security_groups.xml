@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Purchase type access category -->
+    <record id="purchase_type_access_category" model="ir.module.category">
+        <field name="name">Purchase type access category</field>
+    </record>
+
+
+    <!--  Local Purchases Group -->
+    <record id="local_purchases_group" model="res.groups">
+        <field name="name">Local Purchases</field>
+        <field name="category_id" ref="purchase_type_access_category"/>
+        <field name="implied_ids" eval="[(4, ref('purchase.group_purchase_user'))]"/>
+
+
+    </record>
+    <!-- Foreign Puechases Group -->
+    <record id="foreign_purchases_group" model="res.groups">
+        <field name="name">Foreign Purchases</field>
+        <field name="category_id" ref="purchase_type_access_category"/>
+        <field name="implied_ids" eval="[(4, ref('purchase.group_purchase_user'))]"/>
+
+    </record>
+
+    <data >
+    <!--  Foreign Purchases rule -->
+        <record id="foreign_purchases_rule" model="ir.rule">
+            <field name="name">Foreign Purchases Rule</field>
+            <field name="model_id" ref="model_purchase_order"/>
+            <field name="domain_force">[('purchase_type', '=', 'import')]</field>
+            <field name="groups" eval="[(4, ref('foreign_purchases_group'))]"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+    <!--  Local Purchases rule -->
+        <record id="local_purchases_rule" model="ir.rule">
+            <field name="name">Local Purchases Rule</field>
+            <field name="model_id" ref="model_purchase_order"/>
+            <field name="domain_force">[('purchase_type', '=', 'local')]</field>
+            <field name="groups" eval="[(4, ref('local_purchases_group'))]"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+
+        </record>
+
+    </data>
+
+
+</odoo>

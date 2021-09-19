@@ -2,8 +2,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_res_partner,user_res_partner,base.model_res_partner,,1,1,1,1
 access_product_template,user_product_template,product.model_product_template,,1,1,1,1
 access_product_product,user_product_product,product.model_product_product,,1,1,1,1
-access_purchase_order_line,user_purchase_order_line,purchase.model_purchase_order,,1,1,1,1
+access_purchase_order_line,user_purchase_order_line,purchase.model_purchase_order_line,,1,1,1,1
 access_delivery_term,user_delivery_term,model_delivery_term,,1,1,1,1
-access_customer_type,user_customer_type,model_customer_type,,1,1,1,1
-
-
+access_foreign_purchases_type,user_foreign_purchases_type,purchase.model_purchase_order,foreign_purchases_group,1,1,1,1
+access_local_purchases_type,user_local_purchases_type,purchase.model_purchase_order,local_purchases_group,1,1,1,1
