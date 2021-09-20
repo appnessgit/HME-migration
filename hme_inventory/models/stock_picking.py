@@ -1,4 +1,6 @@
+
 from odoo import api, fields, models
+from odoo.exceptions import UserError, ValidationError
 
 
 class Stock(models.Model):
@@ -12,5 +14,11 @@ class Stock(models.Model):
 
                                                   
     
-        
+class Stock_picking(models.Model):
+    _inherit = 'stock.picking'
+    purchase_type = fields.Selection(related='purchase_id.purchase_type')
+    
+    # def compute_can_edit(self):
+    #     self.purchase_type = self.purchase_id.purchase_type
+            
     

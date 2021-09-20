@@ -17,7 +17,12 @@
                    <xpath expr="//field[@name='scheduled_date'][1]" position="attributes">
                     <attribute name="widget">date</attribute>
                 </xpath>
+       
+            <xpath expr="//field[@name='picking_type_id']" position="after">
+                <field name="purchase_type"/>
+         </xpath>
             </field>
+            
         </record>
     </data>
 </odoo>
