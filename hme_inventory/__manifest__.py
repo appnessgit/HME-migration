@@ -26,6 +26,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/stock_picking.xml',
+      'views/product_p_view.xml',
+      'security/security_groups.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -8,6 +8,7 @@ class SaleOrderLine(models.Model):
     batch_num = fields.Many2one('stock.production.lot', 'Batch Number')
     expiry_date = fields.Datetime('Expiry Date')
     product_id = fields.Many2one(comodel_name='product.product', string='Product')
+    price_unit = fields.Float('Unit Price', required=True, digits='Product Price', default=0.0, readonly=True)
 
     @api.onchange('brand_id')
     def _onchange_brand_id(self):

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_id_extended" model="ir.ui.view">
+        <field name="name">product view form inherited</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='lst_price']" position="before">
+                <field name="bool_can_edit" invisible= '1' />
+            </xpath>
+            <!-- <xpath expr="//filed[@name='list_price']" position="attributes">
+                <attribute name="readonly"> [('bool_can_edit', '=', False)] </attribute>
+            </xpath> -->
+            <field name="lst_price" position="attributes">
+                <attribute name="name">lst_price</attribute>
+                <attribute name="attrs">{'readonly': ['|', ('product_variant_count', '&gt;', 1),('bool_can_edit', '=', False)]}</attribute>
+             </field>
+        </field>
+    </record>
+</odoo>
