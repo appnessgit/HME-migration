@@ -30,6 +30,9 @@
                     <field name="batch_num" options="{'no_create': True, 'no_open': True}"/>
                     <field name="expiry_date"/>
                 </xpath>
+                <xpath expr="//sheet/notebook/page/field[@name='order_line']/tree/field[@name='price_unit']" position="replace">
+                    <field name="price_unit" />
+                </xpath>
             </field>
         </record>
     </data>
