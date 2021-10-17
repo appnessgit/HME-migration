@@ -26,6 +26,7 @@
         'security/ir.model.access.csv',
         'views/sale.xml',
         # 'views/templates.xml',
+        'report/quotation_order_inherited.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

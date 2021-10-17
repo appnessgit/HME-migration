@@ -1,0 +1,29 @@
+<!-- Inherit quotation report (from module sale) -->
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<odoo>
+
+    <template id="report_quotation_inherit_demo" inherit_id="sale.report_saleorder_document">
+       <xpath expr="//table//thead//tr//th[1]" position="after">
+        <t t-set="batch_num_set" t-value="any(l.batch_num for l in doc.order_line)"/>
+       
+              <th name="batch_num"  t-if="batch_num_set" class="text-justify"> Batch Number </th>
+        
+        </xpath>
+   
+   <xpath expr="//table//thead//tr//th[2]" position="after">
+    <t t-set="expiry_date_set" t-value="any(l.expiry_date for l in doc.order_line)"/>
+    <t t-if="expiry_date_set">  <th name="expiry_date" class="text-justify"> Expiry Date </th>
+    </t>
+    </xpath>
+<xpath expr="//tbody[@class='sale_tbody']//tr//td[1]" position="after">
+    <t t-if="batch_num_set" >  <td name="batch_num" class="text-justify"> <span t-field="line.batch_num"/> </td>
+    </t>
+<!-- </xpath> -->
+<!-- <xpath expr="//tbody[@class='sale_tbody']//tr//td[]" position="after"> -->
+  <t t-if="expiry_date_set  " > <td name="expiry_date" class="text-justify"> <span t-field="line.expiry_date"/> </td>
+  </t>
+</xpath>
+
+
+    </template>
+</odoo>
