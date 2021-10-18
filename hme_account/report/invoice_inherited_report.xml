@@ -1,0 +1,102 @@
+<odoo>
+
+    <template id="report_invoice_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//table[@name='invoice_line_table']//thead//tr//th[1]" position="after">
+            <t t-set="batch_num_set" t-value="any(l.batch_number_invoice for l in o.invoice_line_ids)"/>
+            <t t-set="expiry_date_set" t-value="any(l.expiry_date_invoice for l in o.invoice_line_ids)"/>
+
+            <th name="batch_num_invoice" t-if="batch_num_set" class="text-justify"> Batch Number </th>
+            <th name="expiry_date_invoice" t-if="expiry_date_set" class="text-justify"> Expiry Date </th>
+
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']//tbody[@class='invoice_tbody']//tr//t//td[1]" position="after">
+            <t t-if="batch_num_set">
+                <td name="batch_number_invoice" class="text-justify">
+                    <span t-field="line.batch_number_invoice"/>
+                </td>
+            </t>
+            <t t-if="expiry_date_set">
+                <td name="expiry_date_invoice" class="text-justify">
+                    <span t-field="line.expiry_date_invoice"/>
+                </td>
+            </t>
+        </xpath>
+
+        <xpath expr="//t//p[5]" position="after">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="container">
+                <!-- <span>  -->
+                <div class = "row">
+
+                    <div class = "col-2">
+                        <strong> Invoice:</strong>
+                        <br/>
+                        <br/>
+                        <span>
+                             Received By: 
+                        </span>
+                        <br/>
+                        <span>
+                           Signature:
+                        </span>
+                        <br/>
+                        <span>
+                            
+                            Date:
+                        </span>
+
+                    </div>
+                    <div class = "col-3">
+                        <br/>
+                        <br/>
+                        <span>
+                            ___________________________
+
+                        </span>
+                        <br/>
+                        <span>
+                            ___________________________
+
+                        </span>
+                        <br/>
+                        <span>
+                         
+                        ___________________________
+                        </span>
+
+                    </div>
+                    <div class = "col-1">
+                    </div>
+                    <div class = "col-2">
+                        <strong> Goods:</strong>
+                        <br/>
+                        <br/>
+                         Received By:
+                        <br/>
+                        Signature:
+                        <br/>
+                        Date:        
+
+                    </div>
+                    <div class = "col-3">
+                        <br/>
+                        <br/>
+                        ___________________________
+                        <br/>
+                        ___________________________
+                        <br/>
+                        ___________________________
+
+
+                    </div>
+
+                </div>
+                <!-- </span> -->
+            </div>
+        </xpath>
+
+    </template>
+</odoo>

@@ -2,7 +2,7 @@
 <!-- <?xml version="1.0" encoding="utf-8"?> -->
 <odoo>
 
-    <template id="report_quotation_inherit_demo" inherit_id="sale.report_saleorder_document">
+    <template id="report_quotation_inherit" inherit_id="sale.report_saleorder_document">
        <xpath expr="//table//thead//tr//th[1]" position="after">
         <t t-set="batch_num_set" t-value="any(l.batch_num for l in doc.order_line)"/>
        

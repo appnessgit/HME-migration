@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+      <!--<Quotations view>-->
+      <record id="hme_account_inherit_view_form" model="ir.ui.view">
+          <field name="name">Account</field>
+          <field name="model">account.move</field>
+          <field name="inherit_id" ref="account.view_move_form"/>
+          <field name="arch" type="xml">
+               <xpath expr="//sheet/notebook/page/field[@name='invoice_line_ids']/tree/field[@name='name']" position="after">
+                  <field name="batch_number_invoice" />
+                  <field name= "expiry_date_invoice"/>
+              </xpath>
+          </field>
+      </record>
+  </data>
+</odoo>
