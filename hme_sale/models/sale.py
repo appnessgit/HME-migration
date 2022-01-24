@@ -15,3 +15,7 @@ class SaleOrderLine(models.Model):
         return {'domain': {'product_id': [('brand_id', '=', self.brand_id.id)]}}
 
 
+class SaleOrder(models.Model):
+    _inherit = "sale.order"
+
+    name = fields.Char(readonly = False)

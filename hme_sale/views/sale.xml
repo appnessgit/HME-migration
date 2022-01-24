@@ -6,6 +6,9 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name" readonly ="0"/>
+                </xpath>
 
                 <xpath expr="//field[@name='date_order'][2]" position="attributes">
                     <attribute name="widget">date</attribute>
